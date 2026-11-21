@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>길 · Korejština A1</title>
+<meta name="theme-color" content="#0052A4">
+<meta name="description" content="Offline kurz korejštiny do úrovně A1 – cesta po Koreji zastávku po zastávce.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header id="top">
+  <div class="brand"><i>길</i></div>
+  <span class="stat" title="Dny v řadě">🔥 <span id="t-streak">0</span></span>
+  <span class="stat" title="Body">⭐ <span id="t-xp">0</span></span>
+  <span class="grow"></span>
+  <div class="seg" id="t-script" role="group" aria-label="Zobrazení písma">
+    <button data-act="script" data-v="ko" aria-label="Jen hangul">한</button>
+    <button data-act="script" data-v="both" aria-label="Hangul a přepis">한+a</button>
+    <button data-act="script" data-v="rr" aria-label="Jen přepis">a</button>
+  </div>
+  <button class="iconbtn" data-act="settings" aria-label="Nastavení">⚙️</button>
+</header>
+<main id="view"></main>
+<nav id="nav">
+  <a href="#/" data-nav="map"><b>🗺️</b>Mapa</a>
+  <a href="#/srs" data-nav="srs"><b>🔁</b>Opakování<span class="badge hide" id="n-due"></span></a>
+  <a href="#/dict" data-nav="dict"><b>📖</b>Slovník</a>
+  <a href="#/hangul" data-nav="hangul"><b>한</b>Hangul</a>
+  <a href="#/me" data-nav="me"><b>🛂</b>Pas</a>
+</nav>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+  }
+</script>
+</body>
+</html>
